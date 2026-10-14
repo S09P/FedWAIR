@@ -423,8 +423,7 @@ implements **FedWAIR only**. Baselines are run with the same client
 partitions, split, number of rounds, and classifier, and are evaluated with the
 same metrics and DI convention.
 
-> **Baseline code.** Add the baseline implementations, or links to the
-> original and adapted code, together with the commands used to run them, here.
+
 
 ### Statistical analysis
 
@@ -450,19 +449,7 @@ interpreted descriptively.
 
 ---
 
-## Citation
 
-If you use this code, please cite the paper.
-
-```bibtex
-@article{pathak2026fedwair,
-  title   = {FedWAIR: Fair Federated Learning via Wasserstein--Fairness Regularization, Fairness-Aware Aggregation, and Multi-Round Pareto Selection},
-  author  = {Pathak, Shivam and Kumar, Sandeep},
-  journal = {ACM Transactions on Intelligent Systems and Technology},
-  year    = {2026},
-  note    = {Under review; update on publication}
-}
-```
 
 ## Contact
 
