@@ -323,12 +323,8 @@ One row per completed run.
 | Run identity | `dataset`, `protected_attr`, `experiment_type` (`main` / `sensitivity` / `ablation`), `method`, `variant`, `param_name`, `param_value`, `seed` |
 | Selection | `selected_round`, `selected_type` (`client` or `global`) |
 | Primary metrics | `acc`, `bacc`, `di1` |
-| Fairness gaps | `spd`, `eod`, `aod`, `fprd`, `tnrd`, `ppd` |
-| Group-wise rates | `tpr_priv`, `tpr_unpriv`, `fpr_*`, `tnr_*`, `fnr_*`, `precision_*`, `f1_priv`, `f1_unpriv` |
-| Overall | `f1_overall`, `precision_overall`, `auc_overall`, `auc_priv`, `auc_unpriv` |
 
-All metrics are logged in one pass, so adding another metric later does not
-require retraining.
+
 
 ### `round_history_log.csv`
 
@@ -339,12 +335,7 @@ best-fairness client (`best_client_id`, `best_client_*`), together with the run
 identity columns. These are per-round diagnostics, evaluated on the validation
 split. They support the training-dynamics analysis.
 
-### `roc_data/<Dataset>_<attribute>__seed<seed>.npz`
 
-Written for main runs only. Contains `y_true`, `y_score`, `protected`, and the
-hyperparameters (`alpha`, `beta`, `ema_lambda`, `mu`, `eps_fair`) plus
-`selected_round` and `selected_type`, so ROC / AUC plots can be produced later
-without retraining.
 
 ### Disparate impact convention
 
@@ -388,14 +379,7 @@ interrupted, re-run Cell 6 and finished runs are skipped.
 | Accuracy (`acc`) | Fraction of correct predictions at threshold 0.5 |
 | Balanced accuracy (`bacc`) | `(TPR + TNR) / 2` |
 | Disparate impact | `di1` ratio as above; the paper's `DI = 1 − di1` |
-| SPD | `P(ŷ=1 \| s=0) − P(ŷ=1 \| s=1)` |
-| EOD | `TPR_unpriv − TPR_priv` |
-| AOD | `½[(FPR_unpriv − FPR_priv) + (TPR_unpriv − TPR_priv)]` |
-| FPRD / TNRD / PPD | Unprivileged-minus-privileged gaps in FPR, TNR, and precision |
-| AUC | Overall and per group, from the raw sigmoid scores |
 
-The primary comparison in the paper uses Accuracy, Balanced Accuracy, and DI.
-The remaining metrics are logged for completeness.
 
 ---
 
