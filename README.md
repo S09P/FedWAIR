@@ -416,12 +416,7 @@ The remaining metrics are logged for completeness.
 
 ### Baselines
 
-The paper compares FedWAIR with FedAvg (reported separately as a
-fairness-agnostic reference) and six fairness-aware federated baselines:
-AgnosticFair, Ditto, FCFL, FairFed, FairTrade, and AFed-G. The notebook
-implements **FedWAIR only**. Baselines are run with the same client
-partitions, split, number of rounds, and classifier, and are evaluated with the
-same metrics and DI convention.
+The paper compares FedWAIR with FedAvg (reported separately as a fairness-agnostic reference) and six fairness-aware federated baselines: AgnosticFair, Ditto, FCFL, FairFed, FairTrade, and AFed-G. The `baselines/` folder contains the corresponding Jupyter notebooks (`.ipynb`) for all baseline implementations. Each baseline is executed using the same experimental configuration as FedWAIR, including client partitions, data splits, number of communication rounds, and classifier, ensuring a fair and consistent comparison. All methods are evaluated using the same metrics and demographic parity (DI) convention.
 
 
 
