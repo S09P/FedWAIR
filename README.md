@@ -121,14 +121,6 @@ columns, casts the label and protected attribute to integers, and returns the
 frame with the label column name. The protected attribute is kept as a column
 of the data but is **not** rescaled.
 
-> **Binarization of the protected attribute.** The privileged and unprivileged
-> groups for each attribute (including how `age` is thresholded for Bank
-> Marketing) are defined by your preprocessing step. Document that mapping
-> alongside the preprocessing script so that results are interpretable.
-
-> **Preprocessing scripts.** The conversion from raw files to
-> `*_processed.csv` is not part of the notebook. Add the script, or a link to
-> it, here.
 
 ---
 
@@ -358,19 +350,7 @@ log["DI"] = (1 - log["di1"]).abs()
 
 ---
 
-## Resuming and Re-running
 
-Every run is keyed by
-`(dataset, protected_attr, experiment_type, variant, param_name, param_value, seed)`
-and appended to `master_log.csv` as soon as it finishes. If the notebook is
-interrupted, re-run Cell 6 and finished runs are skipped.
-
-> **Important.** The key does **not** include hyperparameters or code changes.
-> If you change a default (for example `DEFAULT_MU`) or edit the pipeline and
-> want fresh results, delete `results/` (or the affected rows) first;
-> otherwise those runs will be skipped as "already done".
-
----
 
 ## Metrics
 
@@ -393,10 +373,7 @@ interrupted, re-run Cell 6 and finished runs are skipped.
 | Hyperparameter sensitivity | `master_log.csv`, rows with `experiment_type == "sensitivity"`, grouped by `param_name` and `param_value` |
 | Candidate archive / Pareto figure | Candidate metrics are held in memory inside `run_pipeline()`; add logging there to export them |
 
-> **Analysis and plotting scripts.** The notebook produces the raw logs only.
-> The scripts that build the tables, figures, and statistical tests from these
-> logs are not included in `FedWAIR.ipynb`. Add them to this repository and
-> list them here.
+
 
 ### Baselines
 
