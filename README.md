@@ -381,14 +381,7 @@ The paper compares FedWAIR with FedAvg (reported separately as a fairness-agnost
 
 
 
-### Statistical analysis
 
-For the multi-method comparison, each dataset–attribute configuration is the
-statistical unit. The paper uses the Friedman test with Kendall's `W` for
-overall differences, paired Wilcoxon signed-rank tests with Holm correction for
-FedWAIR against each baseline, and the matched-pairs rank-biserial correlation
-as the effect size. Ablation, training-dynamics, and sensitivity results are
-interpreted descriptively.
 
 ---
 
